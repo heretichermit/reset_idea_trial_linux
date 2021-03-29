@@ -4,6 +4,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+shopt -s autocd
 
 # general purpose aliases
 alias ll='ls -lh'

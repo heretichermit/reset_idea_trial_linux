@@ -10,7 +10,7 @@ shopt -s autocd
 alias ll='ls -lh'
 alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '
-export PS1="\u::\h@\w >\[$(tput sgr0)\]"
+export PS1="[\u::\h@\w]\[$(tput sgr0)\]"
 
 # Fetch distribution name, this requires lsb-release package to be installed
 distro=$(lsb_release -is)

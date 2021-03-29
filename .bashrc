@@ -11,14 +11,33 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # Fetch distribution name, this requires lsb-release package to be installed
-distro = $(lsb_release -is)
+distro=$(lsb_release -is)
 
 # Set aliases for specific distribution
-if [[ $distro == "Arch" ]]; then
-    alias install='sudo pacman -S' 
-    alias sync='pacman -Syy'
-    alias search='pacman -Ss' 
-    alias update='sudo pacman -Syyu' 
-    alias aur='yay -S'
-    alias aur-search='yay -Ss' 
-fi
+case $distro in
+    "Arch" | "Artix")
+        alias install='sudo pacman -S' 
+        alias sync='sudo pacman -Syy'
+        alias search='pacman -Ss' 
+        alias update='sudo pacman -Syyu' 
+        alias aur='yay -S'
+        alias aur-search='yay -Ss'
+        ;;
+    "Ubuntu" | "Debian" | "Mint")
+        alias install='sudo apt install'
+        alias update='apt update'
+        alias upgrade='sudo apt upgrade'
+        alias search='apt search'
+        ;;
+    "Fedora" | "Red Hat" | "OpenSUSE")
+        alias install='sudo dnf install'
+        alias update='sudo dnf update'
+        alias upgrade='sudo dnf upgrade'
+        alias search='dnf search'
+        ;;
+    "Void")
+        alias install='sudo xbps-install'
+        alias update='sudo xbps-install -Su'
+        alias search='xbps-query -R'
+        ;;
+esac

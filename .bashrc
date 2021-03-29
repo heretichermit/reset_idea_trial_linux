@@ -20,7 +20,7 @@ case $distro in
         alias sync='sudo pacman -Syy'
         alias search='pacman -Ss' 
         alias update='sudo pacman -Syyu' 
-        alias aur='yay -S'
+        alias aur-install='yay -S'
         alias aur-search='yay -Ss'
         ;;
     "Ubuntu" | "Debian" | "Mint")
@@ -29,7 +29,7 @@ case $distro in
         alias upgrade='sudo apt upgrade'
         alias search='apt search'
         ;;
-    "Fedora" | "Red Hat" | "OpenSUSE")
+    "Fedora" | "Red Hat")
         alias install='sudo dnf install'
         alias update='sudo dnf update'
         alias upgrade='sudo dnf upgrade'

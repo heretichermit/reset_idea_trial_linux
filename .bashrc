@@ -56,5 +56,6 @@ case $distro in
         alias update='sudo emerge --ask --verbose --update --deep --changed-use @world'
         alias search='emerge --search'
         alias list='qlist -IRv'
+        alias remove='sudo emerge -cav'
         ;;
 esac

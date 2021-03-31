@@ -48,4 +48,13 @@ case $distro in
         alias search='xbps-query -R'
         alias remove='sudo xbps-remove'
         ;;
+    "Gentoo")
+        alias install='sudo emerge -av'
+        alias sync='emerge-webrsync'
+        alias update='sudo emerge --dselect'
+        alias clean='sudo emerge --depclean -vp'
+        alias update='sudo emerge --ask --verbose --update --deep --changed-use @world'
+        alias search='emerge --search'
+        alias list='qlist -IRv'
+        ;;
 esac
